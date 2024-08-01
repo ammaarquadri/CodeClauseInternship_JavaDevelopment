@@ -1,0 +1,51 @@
+CREATE DATABASE HospitalDB;
+
+USE HospitalDB;
+
+CREATE TABLE Patients (
+    PatientID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DOB DATE,
+    Gender VARCHAR(10)
+);
+
+CREATE TABLE Appointments (
+    AppointmentID INT PRIMARY KEY AUTO_INCREMENT,
+    PatientID INT,
+    AppointmentDate DATE,
+    DoctorName VARCHAR(50),
+    Reason VARCHAR(100),
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID)
+);
+
+CREATE TABLE MedicalHistory (
+    HistoryID INT PRIMARY KEY AUTO_INCREMENT,
+    PatientID INT,
+    Diagnosis VARCHAR(100),
+    Treatment VARCHAR(100),
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID)
+);
+
+-----------------------------------------------------------------
+USE HospitalDB;
+SELECT * FROM Patients;
+SELECT * FROM Appointments;
+SELECT * FROM MedicalHistory;
+
+-----------------------------------------------------------------
+USE HospitalDB;
+INSERT INTO Patients (FirstName, LastName, DOB, Gender) VALUES ('John', 'Doe', '1990-01-01', 'Male');
+
+INSERT INTO Appointments (PatientID, AppointmentDate, DoctorName, Reason)
+VALUES (1, '2024-08-15', 'Dr. Smith', 'Routine Checkup');
+
+INSERT INTO Appointments (PatientID, AppointmentDate, DoctorName, Reason)
+VALUES (2, '2024-08-16', 'Dr. Johnson', 'Follow-up');
+
+--------------------------------------------------------------------
+INSERT INTO MedicalHistory (PatientID, Diagnosis, Treatment)
+VALUES (1, 'Flu', 'Rest and Hydration');
+
+INSERT INTO MedicalHistory (PatientID, Diagnosis, Treatment)
+VALUES (2, 'Headache', 'Pain Relievers');
