@@ -49,3 +49,6 @@ VALUES (1, 'Flu', 'Rest and Hydration');
 
 INSERT INTO MedicalHistory (PatientID, Diagnosis, Treatment)
 VALUES (2, 'Headache', 'Pain Relievers');
+
+-------------------------------------------------------
+javac -cp .;C:\mysql-connector-j-9.0.0.jar HospitalInfoSystem.java
