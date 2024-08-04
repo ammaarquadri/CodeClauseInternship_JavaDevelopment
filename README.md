@@ -7,6 +7,11 @@
 **Start Date:** 01 Aug 2024  
 **End Date:** 31 Aug 2024  
 
+<div align="center">
+  <img src="https://github.com/maq765/CodeClauseInternship_JavaDevelopment/raw/main/log.png" alt="Logo" width="200"/>
+</div>
+
+
 ## Project ID: #CC5262 - **Weather App**
 
 **Internship Domain:** Java Development Intern  
